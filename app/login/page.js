@@ -1,10 +1,15 @@
-import React from "react";
-
+import Animated_text from "./_animatedtext";
+import Login_Layout from "./loginLayout";
 const Login = () => {
   return (
-    <div>
-      <h2>This is Login Page</h2>
-    </div>
+    <section className="flex flex-row py-6">
+      <div className="flex items-center justify-center mb-14  bg-gray-100">
+        <div>
+          <Login_Layout />
+        </div>
+      </div>
+      <Animated_text />
+    </section>
   );
 };
 

@@ -20,7 +20,7 @@ const Footer = () => {
   return (
     <footer
       ref={ref}
-      className={`bg-gray-800 text-white py-6 ${
+      className={`bg-gray-800 text-white py-6 mt-7 ${
         isVisible ? "animate-footer" : "footer-hidden"
       } rounded-md`}
     >

@@ -219,3 +219,17 @@
 main {
   padding-top: 10rem; /* Adjust this value to match the height of your navbar */
 }
+
+/* Text slide annimation */
+@keyframes slide {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide {
+  animation: slide 30s linear infinite;
+}
