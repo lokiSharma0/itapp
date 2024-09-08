@@ -24,7 +24,7 @@ const Footer = () => {
         isVisible ? "animate-footer" : "footer-hidden"
       } rounded-md`}
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-7 p-16">
         <div className="flex flex-wrap justify-between">
           {/* Navigation Links */}
           <div className="w-full md:w-1/3 mb-6">
@@ -32,7 +32,7 @@ const Footer = () => {
             <ul>
               {Footer_content.map((link) => {
                 return (
-                  <li key={link.href}>
+                  <li key={link.href} className="mb-4">
                     <Link href={link.href} className="hover:text-gray-400">
                       {link.lable}
                     </Link>
@@ -45,13 +45,13 @@ const Footer = () => {
           {/* Contact Information */}
           <div className="w-full md:w-1/3 mb-6">
             <h2 className="text-lg font-semibold mb-4">Contact Us</h2>
-            <p>211 Norton Street Ashfield, Australia </p>
-            <p>Email: Youwill.services@gmail.com</p>
-            <p>Phone: +1 426 763 400</p>
+            <p className="mb-2">211 Norton Street Ashfield, Australia </p>
+            <p className="mb-2">Email: Youwill.services@gmail.com</p>
+            <p className="mb-2">Phone: +1 426 763 400</p>
           </div>
 
           {/* Social Media Links */}
-          <div className="w-full md:w-1/3 mb-6">
+          <div className="w-full md:w-1/3 mb-6 ">
             <h2 className="text-lg font-semibold mb-4">Follow Us</h2>
             <div className="flex space-x-4 ">
               <a
