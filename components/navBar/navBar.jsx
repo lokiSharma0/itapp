@@ -5,6 +5,10 @@ import { usePathname } from "next/navigation";
 import { DiPostgresql } from "react-icons/di";
 import { FiMenu, FiX } from "react-icons/fi";
 import MobileView from "./hamburgerMenu";
+import { RiLoginBoxFill } from "react-icons/ri";
+import { CgProfile } from "react-icons/cg";
+import Logo from "@public/WebImages/web_Logo.png";
+import Image from "next/image";
 
 const NavBar = () => {
   //for mobile view
@@ -18,7 +22,7 @@ const NavBar = () => {
   const NavContent_noUserLogin = [
     { label: "Home", href: "/" },
     { label: "About Us", href: "/about" },
-    { label: "Login", href: "/login" },
+    // { label: "Login", href: "/login" },
   ];
 
   //nav when user is logged in
@@ -66,17 +70,19 @@ const NavBar = () => {
   return (
     <nav className="fixed top-0 left-0 w-full bg-white text-white z-50 shadow-lg ">
       {/* Desktop View */}
-      <div className="flex space-x-20">
-        <div>
+      <div className="flex  ">
+        <div className="flex-[1]">
           <Link href="/">
-            <DiPostgresql
-              size={80}
-              color={"White"}
-              className="max-w-screen-lg bg-blue-600 rounded-xl mt-1 mb-1 mx-3 hover:bg-green-300"
+            <Image
+              src={Logo}
+              alt="Logo"
+              width={70}
+              height={15}
+              className="max-w-screen-lg rounded-xl mt-1 mb-1 mx-8 animate-jump-interval"
             />
           </Link>
         </div>
-        <div className="flex font-medium  mt-5 mb-1 text-lg">
+        <div className="flex-[2] justify-start font-medium  mt-5 mb-1 text-lg">
           <ul className="items-center space-x-5 hidden md:flex ">
             {isuserloggedin ? (
               <>
@@ -119,6 +125,26 @@ const NavBar = () => {
             )}
           </ul>
         </div>
+        {isuserloggedin ? (
+          <>
+            <div className="flex-[1] text-center   mt-6 hidden lg:block md:block">
+              <Link className="text-zinc-600 flex justify-end mr-8" href="">
+                <CgProfile size={25} className="hover:text-blue-400" />
+              </Link>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className="flex-[1] text-center   mt-6 hidden lg:block md:block">
+              <Link
+                className="text-zinc-600 flex justify-end mr-8"
+                href="/login"
+              >
+                <RiLoginBoxFill size={25} className="hover:text-blue-400" />
+              </Link>
+            </div>
+          </>
+        )}
       </div>
       <div className="orange_gradient text-center  w-44 md:hidden">
         <h2 className="text-lg">Welcome to YouWill</h2>
